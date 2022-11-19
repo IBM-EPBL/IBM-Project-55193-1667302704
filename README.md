@@ -1,5 +1,7 @@
-IBM-Project-11004-1659251853
-Exploratory Analysis of RainFall Data in India for Agriculture - PNT2022TMID47681
+
+IBM-Project-55193-1667302704
+
+Exploratory Analysis of RainFall Data in India for Agriculture - PNT2022TMID47651
 Rainfall forecasting is important otherwise, it may lead to many disasters. Irregular heavy rainfall may lead to the destruction of crops, heavy floods, that can cause harm to human life. It is important to exactly determine the rainfall for effective use of water resources, crop productivity, and pre-planning of water structures.the research on changes in rainfall occurrences is the most sustainable water resource management.
 
 TEAM MEMBERS
