@@ -1,0 +1,530 @@
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explotary Analysis Of Rainfall Data In India For Agriculture</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	--primary-color: #00b7c2;
+}
+
+section {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+section a {
+	color: #fff;
+}
+
+section:nth-child(1) {
+	justify-content: flex-start;
+	background: linear-gradient(#0004, #0004),
+		url(https://images.pexels.com/photos/4297438/pexels-photo-4297438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+			no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+}
+
+section:nth-child(1) .media-icons i {
+	color: var(--primary-color);
+	color: #eee;
+}
+
+#about {
+	background-color: #eee;
+	min-height: 60vh;
+	padding: 7% 10%;
+}
+
+#info {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #eee;
+	min-height: 95vh;
+}
+
+#dashboard {
+	padding: 7% 10%;
+	background-color: #ddd;
+}
+
+#dashboard h2 {
+	margin-bottom: 30px;
+}
+
+#dashboard p {
+	margin-bottom: 40px;
+	padding: 0 10%;
+}
+
+#dashboard img {
+	max-height: 85vh;
+}
+
+#dashboard div {
+	margin-top: 10px;
+	padding: 0 100px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#dashboard div img {
+	width: 100%;
+	max-height: 120px;
+}
+
+.dashboard-image {
+	padding: 0 7%;
+}
+.container{
+	background-color:#00b7c2 ;
+	border: none;
+	color: #ccc;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	
+
+
+}
+#about > div,
+#info > div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 50%;
+}
+
+#about > div img,
+#info > div img {
+	height: 70vh;
+	width: 70%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+#about h2,
+#info h2,
+#dashboard h2 {
+	text-align: center;
+	color: var(--primary-color);
+	font-size: 50px;
+}
+
+#info > div > img {
+	max-width: 75%;
+	height: 75vh;
+}
+
+.about-content {
+	padding: 0 50px;
+	margin-top: 50px;
+}
+
+header {
+	position: relative;
+	top: 0;
+	width: 100%;
+	padding: 30px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+label {
+	display: none;
+}
+
+header .logo {
+	position: relative;
+	font-size: 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+header .navigation a {
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: 500;
+	letter-spacing: 1px;
+	padding: 2px 15px;
+	border-radius: 20px;
+	transition: 0.3s;
+	transition-property: background;
+}
+
+header .navigation a:not(:last-child) {
+	margin-right: 30px;
+}
+
+header .navigation a:hover {
+	background: #333;
+}
+
+.content {
+	max-width: 650px;
+	margin: 60px 100px;
+}
+
+.content .info h2 {
+	color: var(--primary-color);
+	font-size: 55px;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 2px;
+	line-height: 60px;
+	margin-bottom: 30px;
+}
+
+.content .info h2 span {
+	color: #fff;
+	font-size: 50px;
+	font-weight: 600;
+}
+
+.content .info p {
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 40px;
+}
+
+.content .info-btn {
+	color: #fff;
+	background: var(--primary-color);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: 0.3s;
+	transition-property: background;
+}
+
+.content .info-btn:hover {
+	background: #0c4f60;
+}
+
+.media-icons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+.media-icons a {
+	position: relative;
+	color: #111;
+	font-size: 25px;
+	transition: 0.3s;
+	transition-property: transform;
+}
+
+.media-icons a:not(:last-child) {
+	margin-right: 60px;
+}
+
+.media-icons a:hover {
+	transform: scale(1.5);
+}
+
+#check {
+	z-index: 3;
+	display: none;
+}
+
+footer {
+	background-color: #ccc;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	color: #333;
+}
+
+footer p {
+	margin-bottom: 15px;
+}
+
+/* Responsive CSS */
+
+@media (max-width: 960px) {
+	header .navigation {
+		display: none;
+	}
+
+	label {
+		display: block;
+		font-size: 25px;
+		cursor: pointer;
+		transition: 0.3s;
+		transition-property: color;
+	}
+
+	label:hover {
+		color: #fff;
+	}
+
+	label .close-btn {
+		display: none;
+	}
+
+	#check:checked ~ header .navigation {
+		z-index: 2;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(114, 223, 255, 0.9);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#check:checked ~ header .navigation a {
+		font-weight: 700;
+		margin-right: 0;
+		margin-bottom: 50px;
+		letter-spacing: 2px;
+	}
+
+	#check:checked ~ header label .close-btn {
+		z-index: 2;
+		position: fixed;
+		display: block;
+	}
+
+	#check:checked ~ header label .menu-btn {
+		display: none;
+	}
+
+	label .menu-btn {
+		position: absolute;
+	}
+
+	header .logo {
+		position: absolute;
+		bottom: -6px;
+	}
+
+	.content {
+		margin: 10% 35px;
+	}
+
+	.content .info h2 {
+		font-size: 45px;
+		line-height: 50px;
+	}
+
+	.content .info h2 span {
+		font-size: 40px;
+		font-weight: 600;
+	}
+
+	.content .info p {
+		font-size: 15px;
+	}
+
+	#about {
+		padding: 10% 35px;
+	}
+
+	#about p,
+	#info p {
+		font-size: 15px;
+	}
+
+	#info {
+		flex-direction: column;
+	}
+
+	#info div {
+		width: 100vw;
+		padding: 10% 35px;
+	}
+
+	#info div img {
+		height: auto;
+		width: auto;
+		max-height: 50vh;
+		max-width: 100%;
+	}
+
+	.about-content {
+		padding: unset;
+	}
+}
+
+@media (max-width: 560px) {
+	.content .info h2 {
+		font-size: 35px;
+		line-height: 40px;
+	}
+
+	.content .info h2 span {
+		font-size: 30px;
+		font-weight: 600;
+	}
+
+	.content .info p {
+		font-size: 14px;
+	}
+    .container{
+                background-image: url("static\leaf.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                color:black;
+    }
+}
+</style>
+
+<body>
+
+    <section>
+        <input type="checkbox" id="check">
+        <header>
+            </div>
+            <h2><a href="#" class="logo">RAINFALL ANALYSIS</a></h2>
+            <div class="navigation">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#info">Developer</a>
+                <a href="#predict">Predictor</a>
+            </div>
+            <label for="check">
+                <i class="fas fa-bars menu-btn"></i>
+                <i class="fas fa-times close-btn"></i>
+            </label>
+        </header>
+        <div class="content" style="margin-top: 8%;">
+            <div class="info">
+                <h2>A drop harvested is <br><span>a crop harvested</span></h2>
+                <p>  Rain is the source of freshwater for many cultures where rivers, lakes, or aquifers are not easily accessible. Rain makes modern life possible by providing water for agriculture, industry, hygiene, and electrical energy.</p>
+                <a href="#about" class="info-btn">More info</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>Explotary Analysis Of Rainfall Data In India For Agriculture</h2>
+        <p class="about-content" style="text-align: center;">Explotary Analysis Of Rainfall Data In India For Agriculture is a web app which has
+            a Machine Learning model running at the back. The purpose of developing this app is to
+            predict whether it will rain the next day or not. This model is based on the Rain Prediction
+            in Australia dataset. More than 80% of Australia has an annual rainfall of less than
+            600 mm which is less among the all continents other than Antartica which recieves less
+            rainfall. A place inland near Lake Eyre would only receive 81 mm of rain annually. The
+            average annual rainfall in the Australian desert is low, ranging from 81 to 250 mm.
+            Thunderstorms are relatively common in the region, with an annual average of 15 to 20
+            thunderstorms. The southern parts of Australia get the usual westerly winds and
+            rain-bearing cold fronts that come when high–pressure systems move towards northern
+            Australia during winter. Cold snaps may bring frosts inland, though temperatures near the
+            coast are mild or near mild all year round. Summers in southern Australia are generally
+            dry and hot with coastal sea breezes. During a lengthy dry spell, hot and dry winds from
+            the interior can cause bushfires in some southern and eastern states, though most commonly
+            Victoria and New South Wales. The tropical areas of northern Australia have a wet summer
+            because of the monsoon. During "the wet", typically October to April, humid north-westerly
+            winds bring showers and thunderstorms. Occasionally, tropical cyclones can bring heavy
+            rainfall to tropical coastal regions, which is also likely to reach further inland.
+        </p>
+    </section>
+
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <p>
+			Rainfall prediction is important as heavy rainfall can lead to many disasters. The prediction helps people to take preventive measures and moreover the prediction should be accurate.The main challenge is to build a model for long term rainfall prediction. Heavy precipitation prediction could be a major drawback for earth science department because it is closely associated with the economy and lifetime of human. Intention of this project is to offer non-experts easy access to the techniques, approaches utilized in the sector of precipitation prediction and provide a comparative study among the various machine learning techniques.
+		</p>
+        <img class="dashboard-image" src="static\IMG_20221119_120733_894.webp" alt="1">
+        <div>
+            <img src="static\png1.png" alt="1">
+            <img src="static\png3.png" alt="3">
+            <img src="static\png4.png" alt="4">
+            <img src="static\png5.png" alt="5">
+            <img src="static\png6.png" alt="6">
+            <img src="static\png7.png" alt="7">
+            <img src="static\png8.png" alt="8">
+            <img src="static\png9.png" alt="9">
+        </div>
+    </section>
+
+    <section id="info">
+        <div>
+            <img src="static\msec.jpg" alt=" MOHAMED SATHAK ENGINEERING COLLEGE">
+        </div>
+        <div>
+            <h2>Developer</h2>
+            <p class="about-content"> 
+              TEAM ID:PNT2022TMID47681<br>TEAM LEADER:S.SULFA <br>TEAM MEMBER:S.AFRIN SHAHNAJ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.SEYED RASIYAMMAL<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I.PREETHIKA
+                <br> Pursuing final year B.E Computer Science in MOHAMED SATHAK ENGINEERING COLLEGE,Kilakarai,Ramanathapuram.
+
+            </p>
+        </div>
+    </section>
+    <section id="predict">
+    
+
+
+
+
+        <center>
+
+        <h1> RAINFALL PREDICTION</h1><br>
+        
+        
+           <b class="container"> Min Temp :  <input type="text", name='a', placeholder="enter 1"> <br><br>
+            Max Temp :  <input type="text", name='b', placeholder="enter 2"> <br><br>
+            Wind Speed :  <input type="text", name='c', placeholder="enter 3"> <br><br>
+            Humidity : <input type="text", name='d', placeholder="enter 4"> <br><br><br>
+            <a href="static\after_rainy.jpg">predict</a></b>
+        </form>
+
+        
+        
+    </center>
+
+       
+
+    </section>
+    
+
+    <footer>
+        <p>
+            Developed by S.Sulfa,S.Afrin Shahnaj,I.Preethika,B.Seyed Rasiyammal
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
